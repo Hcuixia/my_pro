@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>会员登录</title>
+    <link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/register.css">
+</head>
+<body style="padding:0;">
+    <!-- 简单头部 -->
+	<div class="container clearfix" style="padding: 40px;">
+            <div class="left">
+                <a href="index.html" title="首页">
+                    <img src="img/logo-1.png" height="36" width="448" alt="">
+                </a>
+            </div>
+        </div>
+    <!-- 除头尾的内容部分 -->
+	<div class="content-body">
+            <!-- 外框 -->
+            <div class="pop-wrap">
+                <!-- 登录框 -->
+                <form>
+                    <div class="login-wrap pop-item">
+                        <div class="code-tips bounce">
+                            <div class="triangle"></div>
+                            <div class="content">
+                                扫码下载APP，专享棉品50%OFF
+                            </div>
+                        </div>
+                        <div class="show-code">
+                            <div class="code-tip">
+                                <a href="javascript:;">
+                                    <img src="img/ewm.png" alt="">
+                                </a>
+                            </div>
+                            <div class="code-back hide">
+                                <a href="javascript:goBack();" class="btn">
+                                    <span class="bold">&lt;</span> 返回
+                                </a>
+                            </div>
+                        </div>
+                        <div class="code-wrap clearfix hide">
+                            <div class="width50 text-center">
+                                <img src="img/ewm1.jpg" alt="" class="tips-img">
+                                <p class="tips">
+                                    下载全棉<span class="green bold">App</span>有惊喜
+                                </p>
+                            </div>
+                            <div class="width50 text-center">
+                                <img src="img/ewm2.jpg" alt="" class="tips-img">
+                                <p class="tips">
+                                    关注全棉<span class="green bold">微信公众号</span>
+                                </p>
+                            </div>						
+                        </div>
+                        <div class="form-wrap">
+                            <div class="title">
+                                登录全棉时代
+                            </div>
+                            <div class="item">
+                                <div class="input-wrap clearfix">
+                                    <i class="iconfont">&#xe503;</i>
+                                    <input name="phone" id="loginPhone" class="input-box" type="text" placeholder="请输入手机号">
+                                </div>
+                                <div id="tishi"><span style="color:red;"></span></div>
+                            </div>
+                            <div class="item">
+                                <div class="input-wrap clearfix">
+                                    <i class="iconfont">&#xe611;</i>
+                                    <input name="upwd" id="loginPwd" class="input-box" type="password" placeholder="请输入6~16位密码">
+                                </div>
+                                <div id="tishi"><span style="color:red;"></span></div>
+                            </div>
+                            <div class="item">
+                                <div class="clearfix">
+                                    <div class="input-wrap width58 left">
+                                        <i class="iconfont">&#xe517;</i>
+                                        <input id="imgCode2" name="imgCode2" class="input-box" type="text" placeholder="输入右侧验证码">
+                                    </div>
+                                    <div class="right clearfix" onclick="validation()">
+                                        <div class="code-img left">
+                                            <canvas id="c3" width="80" height="38">
+                                            </canvas>
+                                        </div>
+                                        <a href="javascript:;" class="reload-code"  id="code">换一张</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="item">
+                                <input  id="login" value="登录&gt;" class="btn btn-green btn-sm width100">
+                            </div>												
+                            <div class="item other-login word">
+                                使用合作帐号登录：
+                                <a href="#"><i class="iconfont" style="color: #32cced;">&#xe648;</i></a>
+                                <a href="#"><i class="iconfont" style="color: #f35959;">&#xe747;</i></a>
+                                <a href="#"><i class="iconfont" style="color: #009fe7;">&#xe7ac;</i></a>
+                                <a href="#"><i class="iconfont" style="color: #32CD32;">&#xe691;</i></a>
+                            </div>
+                            <p class="hr"></p>
+                            <div class="item">
+                                <a href="javascript:;" onclick="changeToRegister();" class="btn btn-trans btn-sm width100"><i>&lt;</i> 全棉会员注册</a>
+                            </div>
+                        </div>
+                    </div>
+                </form> 
+            </div>
+        </div>
+	
+
+    <!-- 公共底部 -->
+    <footer class="comm-footer"></footer>
+
+    <!-- 引入js -->
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/jquery-3.2.0.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/login.js"></script>
+</body>
+</html>

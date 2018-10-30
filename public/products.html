@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品列表</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/products.css">
+    <style>
+        .goods-area-wrap .sorts .sort-order .downarrow {margin:0;}
+        .goods-area-wrap .sorts .sort-order .uparrow {margin:0;}
+		.goods-area-wrap .sorts .sort-order .uparrow1 {margin:0;}
+		#listCommPage .active{
+			color:red;
+		}
+    </style>
+</head>
+
+<body>
+<!-- 公共头部 -->
+<header class="comm-header"></header>
+<!-- 除头尾的内容部分 -->
+<div class="content-body">
+		<!-- 导航 -->
+			<div class="bread-nav container">
+				<a href="#" title="">首页</a>
+				<!-- 分类的菜单导航展示 begin -->
+						<span>&gt;</span>
+						<a href="#" title="">Kids / 婴童</a>
+						<span>&gt;</span>
+						<a href="#" title="">婴童护理</a>
+				<!-- 分类的菜单导航展示 end -->
+			</div>
+
+		<!-- 栏目内商品推荐 -->
+		<div class="goods-recommend container">
+			<div class="zyslide-container">
+				<div class="zyslide-wrap clearfix" style="width: 2300px;">
+					<div class="zy-slide">
+						<a href="#">
+							<img src="img/fenlei/20170515-kids.jpg" alt="">
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- 导航按钮 -->
+			<div class="slide-button-wrap top-right-button clearfix hide">
+				<div class="slide-button left prev">&lt;</div>
+				<div class="slide-button right next">&gt;</div>
+			</div>
+		</div>
+
+		<!-- 商品展示区域 -->
+		<div class="goods-area-wrap container" id="showmall">
+			<!-- 选择商品显示方式 -->
+			<div class="select">
+				<div class="sorts clearfix">
+					<div class="title left">					
+			        	<a href="#" class="go-back">&lt; 返回Kids / 婴童</a>
+					</div>
+					<div class="sort-order right">
+						<a href="javascript:;" class="cur-sort">默认排序</a>
+						<span>·</span>
+						<a href="javascript:;" >好评度<span class="uparrow"></span></a>
+						<span>·</span>
+						<a href="javascript:;" >价格<span class="uparrow"></span></a>
+						<span>·</span>
+						<a href="javascript:;" >上架时间<span class="uparrow"></span></a>
+						<span>·</span>
+						<a href="javascript:;" >销量<span class="uparrow"></span></a>
+					</div>
+				</div>
+				
+
+				<!-- 具体商品分类 -->
+				<div class="classify-comm">
+					<div class="wrap clearfix">
+								<!-- 二级分类 -->
+								<div class="left">
+									<span class="title">全部 婴童护理</span>
+								</div>
+								<div class="left">
+									<span>
+                                        <i>·</i>
+                                        <a href="#">隔尿裤</a>
+                                    </span>
+									<span>
+										<i>·</i>
+										<a href="#">安全背心</a>
+									</span>
+									<span>
+                                        <i>·</i>
+                                        <a href="#">肚兜</a>
+									</span>
+									<span>
+										<i>·</i>
+										<a href="#">棉尿裤</a>
+									</span>
+									<span>
+										<i>·</i>
+										<a href="#">肚围</a>
+									</span>
+									<span>
+                                        <i>·</i>
+                                        <a href="#">口水兜</a>
+									</span>
+																				
+								</div>
+						<!-- 分类导航end -->
+					</div>
+				</div>
+			</div>
+
+			<!-- 商品列表 -->
+			<div class="list-comm-wrap"  id="listComm">
+				
+				<div class="category-second">
+					<div class="list-comm clearfix">
+						<!-- 商品展示  -->		
+						<div class="item" v-cloak v-for="p in products" :key="p.lid"  @click="getDetail(p.lid)">
+                        <a href="javascript:;">
+                            <div class="good-img-wrap">
+                                <img :src="p.md" alt="" class="good-img">
+                            </div>
+                            <div class="good-name">
+                                <p class="content" v-text="p.title"></p>
+                            </div>
+                            <div class="good-price">
+                                <span class="discount-price" v-text="'¥'+p.price"></span>
+                                <span class="original-price" v-text="'¥'+p.old_price"></span>
+                            </div>  
+                        </a>
+						</div>
+                   
+                    </div>
+				</div>
+			
+
+			<!-- 分页 -->
+				<div class="paging" id="listCommPage">
+					<a href="javascript:;" class="active" v-for="item in pageCount">{{item}}</a>
+				</div>
+			</div>
+			
+		</div>
+			
+		<!-- 热卖推荐轮播 -->
+		<div class="hot-recommend-wrap container clearfix">
+			<div class="left">
+				<div class="left-recommend-title">
+					<div class="word">
+						<div class="title">本周热卖</div>
+						<div class="hr"></div>
+						<div class="desc">
+							这些好棉品<br>正在热卖中
+						</div>
+					</div>
+					<div class="bg-img-wrap">
+						<img src="img/goodslist/left-recommend.jpg" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="right">
+				<!-- 热卖商品推荐 轮播 -->
+				<div class="recommend-slide right-recommend-slide" ondragstart="return false" onselectstart="return false">
+					<div class="zyslide-container">
+						<div class="zyslide-wrap clearfix" style="width: 2640px; left: -220px;">
+								
+								<div class="zy-slide">
+									<a href="#" title="">
+										<div class="pro-img">
+												<img src="img/goodslist/good (13).jpg" alt="">
+										</div>
+										<div class="good-name">
+											<p class="content">奈丝公主亲肤平纹超薄日夜混合组</p>
+										</div>
+										<div class="good-price">
+											<span class="discount-price">¥116.9</span>
+											<span class="original-price hide">¥188.0</span>
+										</div>
+									</a>
+								</div>
+								<div class="zy-slide">
+									<a href="#" title="">
+										<div class="pro-img">
+												<img src="img/goodslist/good (14).jpg" alt="">
+										</div>
+										<div class="good-name">
+											<p class="content">居家日用清洁专用纯棉柔巾 100抽/包 6包</p>
+										</div>
+										<div class="good-price">
+											<span class="discount-price">¥138</span>
+											<span class="original-price hide">¥188.0</span>
+										</div>
+									</a>
+								</div>
+								<div class="zy-slide">
+									<a href="#" title="">
+										<div class="pro-img">
+												<img src="img/goodslist/good (15).jpg" alt="">
+										</div>
+										<div class="good-name">
+											<p class="content">孕产加厚加柔纯棉柔巾 100片/盒 6盒</p>
+										</div>
+										<div class="good-price">
+											<span class="discount-price">¥160.8</span>
+											<span class="original-price hide">¥188.0</span>
+										</div>
+									</a>
+								</div>
+								<div class="zy-slide">
+									<a href="#" title="">
+										<div class="pro-img">
+												<img src="img/goodslist/good (16).jpg" alt="">
+										</div>
+										<div class="good-name">
+											<p class="content">盒装全棉酒精平纹无纺布消毒棉片 100片/盒</p>
+										</div>
+										<div class="good-price">
+											<span class="discount-price">¥26</span>
+											<span class="original-price hide">¥188.0</span>
+										</div>
+									</a>
+								</div>
+													
+								<div class="zy-slide">
+									<a href="#" title="">
+										<div class="pro-img">
+												<img src="img/goodslist/good (17).jpg" alt="">
+										</div>
+										<div class="good-name">
+											<p class="content">袋装婴幼儿面部清洁专用加厚纯棉柔巾 100抽/包 6包</p>
+										</div>
+										<div class="good-price">
+											<span class="discount-price">¥108</span>
+											<span class="original-price hide">¥188.0</span>
+										</div>
+									</a>
+								</div>
+								<div class="zy-slide">
+									<a href="#" title="">
+										<div class="pro-img">
+												<img src="img/goodslist/good (18).jpg" alt="">
+										</div>
+										<div class="good-name">
+											<p class="content">女士全棉EO灭菌一次性内裤 XL码 5件/袋</p>
+										</div>
+										<div class="good-price">
+											<span class="discount-price">¥38.8</span>
+											<span class="original-price hide">¥188.0</span>
+										</div>
+									</a>
+								</div>
+								
+								
+						</div>
+					</div>
+
+					<div class="slide-button-wrap top-right-button clearfix">
+						<div class="slide-button left prev">&lt;</div>
+						<div class="slide-button right next">&gt;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!-- 公共底部 -->
+<footer class="comm-footer"></footer>
+<!-- 公共右侧侧边栏 -->
+<div class="fixedtool">
+		
+        <div class="item">
+            <a href="javascript:;">
+                <i class="icon-img" style="background-image:url(img/erweima.png)"></i>
+                <p class="tips">下载全棉<br>APP</p>
+            </a>
+            <div class="show-msg">
+                <img src="img/ewm1.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <a href="#">
+                <i class="icon-img" style="background-image:url(img/kefu.png)"></i>
+                <p class="tips">客服<br>中心</p>
+            </a>
+        </div>
+        
+        <div class="item to-top">
+            <a href="javascript:window.scrollTo( 0, 0 );">
+                <i class="icon-img">︿</i>
+                <p class="tips">返回顶部</p>
+            </a>
+        </div>
+</div>
+
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/vue.js"></script>
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="js/base.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/products.js"></script>
+</html>
+</body>

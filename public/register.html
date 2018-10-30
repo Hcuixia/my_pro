@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>会员注册</title>
+    <link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/register.css">
+</head>
+<body style="padding:0;">
+    <!-- 简单头部 -->
+	<div class="container clearfix" style="padding: 40px;">
+            <div class="left">
+                <a href="index.html" title="首页">
+                    <img src="img/logo-1.png" height="36" width="448" alt="">
+                </a>
+            </div>
+        </div>
+    <!-- 除头尾的内容部分 -->
+	<div class="content-body">
+            <!-- 外框 -->
+            <div class="pop-wrap">
+                <!-- 注册框 -->
+                <form id="register">
+                    <div class="register-wrap pop-item">
+                        <div class="form-wrap">
+                            <div class="title">
+                                注册全棉时代会员
+                            </div>
+                            <div class="item">
+                                <div class="input-wrap clearfix">
+                                    <i class="iconfont">&#xe503;</i>
+                                    <input id="regPhone" name="phone" maxlength="11" class="input-box" type="text" placeholder="请输入11位手机号码">                                 
+                                </div>
+                                <div>
+                                    <span style="color:red"></span>
+                                </div>                                
+                            </div>
+                            <div class="item">
+                                <div class="input-wrap clearfix">
+                                    <i class="iconfont">&#xe611;</i>
+                                    <input id="regPwd" name="upwd" class="input-box" type="password" placeholder="请输入6~16位密码" onblur="">
+                                </div>
+                                <div>
+                                    <span style="color:red"></span>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="input-wrap clearfix">
+                                    <i class="iconfont">&#xe611;</i>
+                                    <input id="re_regPwd" class="input-box" type="password" placeholder="请再次输入密码确认">                               
+                                </div>
+                                <div>
+                                    <span style="color:red"></span>
+                                </div>
+                                
+                            </div>
+                            <div class="item">
+                                <div class="clearfix">
+                                    <div class="input-wrap width58 left">
+                                        <i class="iconfont">&#xe517;</i>
+                                        <input id="imageCode" name="imageCode" class="input-box" type="text" placeholder="输入右侧验证码">
+                                    </div>
+                                    <div class="right clearfix">
+                                        <div class="code-img left">
+                                            <canvas id="c4" width="80" height="38">
+                                            </canvas>
+                                        </div>
+                                        <a href="" class="reload-code">换一张</a>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="item" id="submitBtn">
+                                <input type="button" value="注册&gt;" class="btn btn-green btn-sm width100">
+                            </div>
+                            <p class="hr"></p>
+                            <div class="item">
+                                <a href="javascript:;" onclick="changeToLogin()" class="btn btn-trans btn-sm width100"><i>&lt;</i> 已有帐号登录</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+    
+            </div>
+        </div>  
+
+
+    <!-- 公共底部 -->
+    <footer class="comm-footer"></footer>
+
+
+    <script src="js/jquery-1.11.3.js"></script>
+    <script src="js/base.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/register.js"></script>
+</body>
+</html>

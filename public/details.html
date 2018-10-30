@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品详情</title>
+    <link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/details.css">
+	<style>
+		.price-description p:nth-child(1){
+			color: #00937f;height: 50px;line-height: 50px;margin-bottom:2px;
+		}
+		.price-description .price-shuoming{
+			display:block;width: 100px;text-align: center;border-bottom: 2px solid #00937f;
+		}
+		.price-description p:nth-child(2){
+			padding-left:10px;line-height: 1.8;color:#999;padding-top:10px;border-top:1px solid #ccc;font-size: 14px;
+		}
+		.price-description p:nth-child(3){
+			padding-left:10px;line-height: 1.8;color:#999;font-size: 14px;
+		}
+		.d-none{
+			display: none;
+		}
+		#super-mask{
+			width:500px;height:500px;position:absolute;z-index:201;
+		}
+		/*大遮罩层等于中图片的宽高*/
+		/*小遮罩层样式*/
+	</style>
+</head>
+<body>
+<!-- 公共头部 -->
+<header class="comm-header"></header>
+<!-- 除头尾的内容部分 -->
+<div class="content-body">
+<!-- 商品详情 -->
+<div class="detail-wrapper container">
+<!-- 商品基本信息（放大镜等） -->
+<div class="goods-basic clearfix" id="details">
+	<div class="left left-pos">
+		<div class="goods-magnifier clearfix">
+			<div class="left">
+				<div class="list-img-wrap">
+					<div class="list-img">
+						<ul class="show_pic" id="select_show">
+		                    <!-- <li>
+								<img  class="cur" 
+								data-md="img/details/md/md_blue1.jpg" 
+								data-lg="img/details/lg/lg_blue1.jpg"
+								src="img/details/sm/sm_blue1.jpg">
+							</li> -->
+						   
+						</ul>
+					</div>
+					<div class="button-wrap">
+						<div class="button prev">︿</div>
+						<div class="button next">﹀</div>
+					</div>
+				</div>
+			</div>
+			<div class="right" id="right">
+				<div class="big-img">
+					<img src="img/details/md/md_blue1.jpg" alt="">
+				</div>
+				<span id="mask" class="d-none"></span>
+				<div id="super-mask"></div>
+				
+					<div class="d-none" id="lgDiv">
+						<img src="img/details/lg/lg_blue1.jpg">
+					</div>
+				</div>
+		</div>
+	</div>
+	<div class="right">
+		<div class="goods-msg">
+		</div>
+	</div>
+</div>
+
+			<!-- 商品详细信息 -->
+			<div class="goods-detail clearfix">
+<div class="left">
+	<div class="tab-nav">
+		<ul class="tab-item clearfix">
+			<li class="item active">商品介绍</li>
+			<li class="item">商品评价</li>
+		</ul>
+		<div class="tab-content">
+			<div class="content">
+				<div class="script-append">
+                    
+                    <div>
+                        <img class="goods-notice" style="vertical-align:middle;" src="img/details/goods-notice-m.jpg">
+                    </div>
+                    <div>
+                        <img class="goods-notice" style="vertical-align:middle;" src="img/details/goods-notice-pc.jpg">
+                    </div>
+				</div>
+				<!-- mc上传商品的具体信息 -->
+				<div class="upload">
+					<p>
+                        <img alt="" src="img/details/564028D8F7F86A75B84D29CBA76CBBEC.jpg">
+                        <img alt="" src="img/details/99F71A1C52E170F598EBC070E50A777F.jpg">
+                        <img alt="" src="img/details/0A24149E8307BFB324B6E6A75F6435CB.jpg">
+                        <img alt="" src="img/details/23CB6AA682E46E0EC9102A830A033838.jpg">
+                        <img alt="" src="img/details/65D5A95BF1CEE40E9B41FE1DFE91616B.jpg">
+                        <img alt="" src="img/details/AB6C4A2A200E3480D7FFE4DB62589A35.jpg">
+                        <img alt="" src="img/details/55FAA839E25293D3923D90F5251CF1BC.jpg">
+                        <img alt="" src="img/details/FD94BEBD890A25942C6B5AFFB1A3DDD4.jpg">
+                        <img alt="" src="img/details/B022049E958CE9F1225159B784A34385.jpg">
+
+                    </p>
+
+				</div>
+			</div>
+			<div class="content hide">
+				<!-- 评价 -->
+				<div class="evaluate" id="pageComentdlNew">
+					
+			    <dl class="clearfix"> 
+					<dt> 
+						<div class="head">
+							<img src="img/details/to1.jpg">
+						</div>
+						<div class="name">季**维</div>
+					</dt>
+					<dd>
+						<div class="star clearfix">
+							<div class="left clearfix">
+								<span class="word left">评分：</span>
+								<i class="star5"></i>
+							</div>
+							<div class="right">
+								<span class="word">2018-01-24 10:54:34</span>
+							</div>
+						</div>
+						<div class="content">
+							<span class="word">评价内容：</span>
+							<span>昨天收到货的，质量不错，主要是用起来放心，设计上唯一有一点不足的，就是拉链拉开后抱被无法全部展开，这是个小缺陷，以后可以改进设计，其余都不错</span>
+						</div>
+						<div class="reply">
+							<span class="word green">全棉回复：</span>
+							<span>您好，感谢您对我们全棉时代的支持与喜爱！我们的商品是棉原料制作的，在医学环境下生产，层层监控，卫生舒适，您可以放心使用哈。您的鼓励是我们的动力。祝您生活愉快！</span>
+						</div>
+					</dd>
+				</dl>
+			</div>
+			    
+			    <div class="paging" id="pageComentNew">
+				
+			<a href="javascript:;" class="cur">1</a></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="price-description">
+		<p><span class="price-shuoming">价格说明：</span></p>
+		<p><b style="color:#000;">划线价格：</b>划线价格为商品专柜价吊牌价或零售指导价，供您参考。</p>
+		<p><b style="color:#000;">未划线价格：</b>未划线的价格是商品在本平台上的销售标价，具体的成交价格可能因为使用优惠券、积分、会员价等发生变化，最终以订单结算页价格为准</p>
+	</div>
+</div><div class="right">
+	<div class="detail-recommend">
+		<div class="title">
+			<p class="content">当前品类推荐</p>
+		</div>
+		<!-- 推荐商品列表 -->
+		<div class="list-comm clearfix">
+                      	<div class="item">
+					<a href="#">
+							<div class="good-img-wrap">
+								<img class="good-img" src="img/details/17824B92900DEEF14C7E3BDF44772168.jpg_350x350.jpg">
+							</div>
+							<div class="good-name">
+								<p class="content">婴儿四层纱布抱被80x80cm， 1件装</p>
+							</div>
+						<div class="good-price">
+							<span class="discount-price">¥238.0</span>
+						</div>
+						<div class="bottom-tip hide">
+							<p class="low-stocks">库存不足</p>
+							<p class="time-discount hide">
+								仅 <span>¥88.0</span> 限时优惠中 &gt;
+							</p>
+						</div>
+					</a>
+				</div>
+            	<div class="item">
+					<a href="#">
+							<div class="good-img-wrap">
+								<img class="good-img" src="img/details/17824B92900DEEF14C7E3BDF44772168.jpg_350x350.jpg">
+							</div>
+							<div class="good-name">
+								<p class="content">婴儿双层纱布抱被80x80cm， 1条装</p>
+							</div>
+						<div class="good-price">
+							<span class="discount-price">¥198.0</span>
+						</div>
+						<div class="bottom-tip hide">
+							<p class="low-stocks">库存不足</p>
+							<p class="time-discount hide">
+								仅 <span>¥88.0</span> 限时优惠中 &gt;
+							</p>
+						</div>
+					</a>
+				</div>
+            	<div class="item">
+					<a href="#">
+							<div class="good-img-wrap">
+								<img class="good-img" src="img/details/17824B92900DEEF14C7E3BDF44772168.jpg_350x350.jpg">
+							</div>
+							<div class="good-name">
+								<p class="content">婴儿针织夹涤棉抱被90x90cm， 1条装</p>
+							</div>
+						<div class="good-price">
+							<span class="discount-price">¥268.0</span>
+						</div>
+						<div class="bottom-tip hide">
+							<p class="low-stocks">库存不足</p>
+							<p class="time-discount hide">
+								仅 <span>¥88.0</span> 限时优惠中 &gt;
+							</p>
+						</div>
+					</a>
+				</div>
+		</div>
+		
+		<div class="title">
+			<p class="content">热销商品推荐</p>
+		</div>
+		<!-- 推荐商品列表 -->
+		<div class="list-comm clearfix">
+				<div class="item">
+					<a href="#">
+							<div class="good-img-wrap">
+								<img class="good-img" src="img/details/17824B92900DEEF14C7E3BDF44772168.jpg_350x350.jpg">
+							</div>
+							<div class="good-name">
+								<p class="content">【818专享】满599减100元大额券</p>
+							</div>
+						<div class="good-price">
+							<span class="discount-price">¥1</span>
+						</div>
+						<div class="bottom-tip hide">
+							<p class="low-stocks">库存不足</p>
+							<p class="time-discount hide">
+								仅 <span>¥88.0</span> 限时优惠中 &gt;
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="item">
+					<a href="#">
+							<div class="good-img-wrap">
+								<img class="good-img" src="img/details/17824B92900DEEF14C7E3BDF44772168.jpg_350x350.jpg">
+							</div>
+							<div class="good-name">
+								<p class="content">【818专享】满1000减300元大额券</p>
+							</div>
+						<div class="good-price">
+							<span class="discount-price">¥8.8</span>
+						</div>
+						<div class="bottom-tip hide">
+							<p class="low-stocks">库存不足</p>
+							<p class="time-discount hide">
+								仅 <span>¥88.0</span> 限时优惠中 &gt;
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="item">
+					<a href="#">
+							<div class="good-img-wrap">
+								<img class="good-img" src="img/details/17824B92900DEEF14C7E3BDF44772168.jpg_350x350.jpg">
+							</div>
+							<div class="good-name">
+								<p class="content">奈丝公主全棉护垫 150mm 20片</p>
+							</div>
+						<div class="good-price">
+							<span class="discount-price">¥9.9</span>
+						</div>
+						<div class="bottom-tip hide">
+							<p class="low-stocks">库存不足</p>
+							<p class="time-discount hide">
+								仅 <span>¥88.0</span> 限时优惠中 &gt;
+							</p>
+						</div>
+					</a>
+				</div>
+				<div class="item">
+					<a href="#">
+							<div class="good-img-wrap">
+								<img class="good-img" src="img/details/17824B92900DEEF14C7E3BDF44772168.jpg_350x350.jpg">
+							</div>
+							<div class="good-name">
+								<p class="content">女士针织低腰三角裤165/95， 2件装</p>
+							</div>
+						<div class="good-price">
+							<span class="discount-price">¥88</span>
+						</div>
+						<div class="bottom-tip hide">
+							<p class="low-stocks">库存不足</p>
+							<p class="time-discount hide">
+								仅 <span>¥88.0</span> 限时优惠中 &gt;
+							</p>
+						</div>
+					</a>
+				</div>
+		</div>
+	</div>
+</div>
+			</div>
+		</div>
+	</div>
+
+<!-- 公共底部 -->
+<footer class="comm-footer"></footer>
+
+<!-- 公共右侧侧边栏 -->
+<div class="fixedtool">
+		
+        <div class="item">
+            <a href="javascript:;">
+                <i class="icon-img" style="background-image:url(img/erweima.png)"></i>
+                <p class="tips">下载全棉<br>APP</p>
+            </a>
+            <div class="show-msg">
+                <img src="img/ewm1.jpg" alt="">
+            </div>
+        </div>
+        <div class="item">
+            <a href="#">
+                <i class="icon-img" style="background-image:url(img/kefu.png)"></i>
+                <p class="tips">客服<br>中心</p>
+            </a>
+        </div>
+        
+        <div class="item to-top">
+            <a href="javascript:window.scrollTo( 0, 0 );">
+                <i class="icon-img">︿</i>
+                <p class="tips">返回顶部</p>
+            </a>
+        </div>
+</div>
+<!--<script src="js/jquery-1.11.3.js"></script>-->
+<script src="js/jquery-3.2.0.js"></script>
+<script src="js/vue.js"></script>
+<script src="js/base.js"></script>
+<script src="js/header.js"></script>
+<script src="js/footer.js"></script>
+<script src="js/details.js"></script>
+</body>
+
+</html>
